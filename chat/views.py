@@ -3,10 +3,11 @@ from .models import Room,Message
 
 def rooms(request):
     rooms=Room.objects.all()
-    return render(request, "rooms.html",{"rooms":rooms})
+    context = {"rooms":rooms}
+    return render(request, "rooms.html", context)
 
-def room(request,slug):
+def room(request, slug):
     room_name=Room.objects.get(slug=slug).name
     messages=Message.objects.filter(room=Room.objects.get(slug=slug))
-    
-    return render(request, "room.html",{"room_name":room_name,"slug":slug,'messages':messages})
+    context = {"room_name":room_name,"slug":slug,'messages':messages}
+    return render(request, "room.html", context)

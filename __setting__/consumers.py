@@ -1,8 +1,8 @@
-import json
-from channels.generic.websocket import AsyncWebsocketConsumer
-from asgiref.sync import sync_to_async
+import  json
+from    channels.generic.websocket      import  AsyncWebsocketConsumer
+from    asgiref.sync                    import  sync_to_async
 
-from chat.models import Room,Message,User
+from    chat.models                     import Room, Message, User
 
 class ChatConsumer(AsyncWebsocketConsumer):
     async def connect(self):
