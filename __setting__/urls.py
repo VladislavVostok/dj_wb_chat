@@ -7,5 +7,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include("django.contrib.auth.urls")),
     path('chats/',include('chat.urls')),
-    path('', views.index)
+    path('', views.index),
+    path("robots.txt", views.robots_txt),
 ]
